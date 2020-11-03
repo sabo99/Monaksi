@@ -22,7 +22,9 @@ Gradle Use :
     implementation "com.leinardi.android:speed-dial:3.1.1"
 
 Source Compatibility
-    compileOptions {
+    compileOptions 
+    {
+    
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
