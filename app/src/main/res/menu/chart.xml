@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/actionToggleHole"
+        android:title="@string/actionToggleHole">
+    </item>
+    <item
+        android:id="@+id/actionToggleCurvedSlices"
+        android:title="@string/actionToggleCurvedSlices">
+    </item>
+    <item
+        android:id="@+id/actionToggleSpin"
+        android:title="@string/actionToggleSpin">
+    </item>
+    <item
+        android:id="@+id/actionSave"
+        android:title="@string/actionSave">
+    </item>
+
+</menu>

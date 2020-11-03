@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.sabo.monaksi.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.sabo.monaksi.ui.list.ListFragment"
+        android:label="@string/menu_list"
+        tools:layout="@layout/fragment_list" />
+
+    <fragment
+        android:id="@+id/nav_task"
+        android:name="com.sabo.monaksi.ui.task.TaskFragment"
+        android:label="@string/menu_task"
+        tools:layout="@layout/fragment_task" />
+
+    <fragment
+        android:id="@+id/nav_approval"
+        android:name="com.sabo.monaksi.ui.approval.ApprovalFragment"
+        android:label="@string/menu_approval"
+        tools:layout="@layout/fragment_approval" />
+
+    <fragment
+        android:id="@+id/nav_verifikasi"
+        android:name="com.sabo.monaksi.ui.verifikasi.VerifikasiFragment"
+        android:label="@string/menu_verifikasi"
+        tools:layout="@layout/fragment_verifikasi" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.sabo.monaksi.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/menu_utama"
+            android:enabled="false"/>
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_round_dashboard"
+            android:title="@string/menu_dashboard" />
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_round_list"
+            android:title="@string/menu_list" />
+        <item
+            android:id="@+id/nav_task"
+            android:icon="@drawable/ic_round_task"
+            android:title="@string/menu_task" />
+        <item
+            android:id="@+id/nav_approval"
+            android:icon="@drawable/ic_round_approval"
+            android:title="@string/menu_approval" />
+        <item
+            android:id="@+id/nav_verifikasi"
+            android:icon="@drawable/ic_round_verifikasi"
+            android:title="@string/menu_verifikasi" />
+        <item
+            android:enabled="false"
+            android:title="@string/menu_user" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_round_profile"
+            android:title="@string/menu_profile" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:checkable="false"
+            android:icon="@drawable/ic_round_bug_report"
+            android:onClick="menuFeedback"
+            android:title="@string/menu_feedback" />
+        <item
+            android:id="@+id/nav_logout"
+            android:checkable="false"
+            android:icon="@drawable/ic_round_logout"
+            android:onClick="menuLogout"
+            android:title="@string/menu_logout" />
+    </group>
+</menu>

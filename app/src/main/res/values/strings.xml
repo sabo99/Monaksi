@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">Monaksi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_list">List</string>
+    <string name="menu_task">Task</string>
+    <string name="menu_approval">Approval</string>
+    <string name="menu_verifikasi">Verifikasi</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_feedback">Report Bug/Feedback</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_user">MENU USER</string>
+    <string name="menu_utama">MENU UTAMA</string>
+    <string name="monaksi_v_2">MONAKSI V.2</string>
+    <string name="nama_user">Nama User</string>
+    <string name="level">review</string>
+    <string name="actionToggleHole">Toggle Hole</string>
+    <string name="actionToggleCurvedSlices">Toggle Curved Slices</string>
+    <string name="actionToggleSpin">Spin Animation</string>
+    <string name="actionSave">Save to Gallery</string>
+    <string name="maction_gmail">alvin.set99@gmail.com</string>
+    <string name="maction_phone">6282177174400</string>
+    <string name="content_feedback">Selamat datang di aplikasi Monitoring Action Plan (Android) UIKSBS.\nJika ada pertanyaan, saran ataupun error silahkan hubungi kami.</string>
+    <string name="subjectGmail">Aplikasi M-Action-Android UIKSBS</string>
+    <string name="textClose">Close</string>
+    <string name="titleDialogFeedback">Report Bug / Feedback</string>
+    <string name="titleDialogLogout">Logout</string>
+    <string name="contentLogout">Apakah anda yakin ingin keluar?</string>
+    <string name="copyrightPLN">\u00a9 2020 All right reserved</string>
+    <string name="textBotLog">PT PLN (Persero) Unit Induk Pembangkitan Sumatera Bagian Selatan.</string>
+    <string name="UIKSBS">PLN UIKSBS</string>
+    <string name="titleDialogInfoStatus">Monitoring for Action Plan</string>
+    <string name="contentInfoStatus">Tingkat status keputusan</string>
+    <string name="actionSearch">Search</string>
+    <string name="titleDetailList">List - Detail Keputusan</string>
+    <string name="detailKeputusan">Detail Keputusan</string>
+    <string name="agendaProgramId">Agenda / Program ID</string>
+    <string name="tanggalTarget">Tanggal Target</string>
+    <string name="keputusan">Keputusan</string>
+    <string name="pic">PIC</string>
+    <string name="verifikator">Verifikator</string>
+    <string name="rencanaAksi">Rencana Aksi</string>
+    <string name="tgl">00-00-0000</string>
+    <string name="tglSelesai">Tanggal Selesai</string>
+    <string name="tglApproved">Tanggal Approved</string>
+    <string name="tglClosed">Tanggal Closed</string>
+    <string name="blmSelesai">Belum Selesai</string>
+    <string name="blmApproved">Belum di Approved</string>
+    <string name="blmVerifikasi">Belum di Verifikasi</string>
+    <string name="keterangan">Keterangan / Komentar</string>
+    <string name="status">Status</string>
+    <string name="lampiran">Lampiran</string>
+    <string name="lampiranEmpty">Tidak ada lampiran</string>
+    <string name="komentarEmpty">Tidak ada komentar</string>
+    <string name="titleDetailApproval">Approval - Detail Keputusan</string>
+    <string name="titleDetailTask">Task - Detail Keputusan</string>
+    <string name="titleDetailVerifikasi">Verifikasi - Detail Keputusan</string>
+    <string name="actionDetailStatus">Info Detail Status</string>
+    <string name="actionUpdateRencanaAksi">Update Rencana Aksi</string>
+    <string name="actionSendToApproval">Send to Approval</string>
+    <string name="fileLampiran">File Lampiran</string>
+    <string name="infoLampiran">*Click nama file untuk lihat lampiran \nAbaikan bila tidak ingin diganti. </string>
+    <string name="noFileChosen">No file chosen.</string>
+    <string name="blmAdaRencanaAksi">Belum ada rencana aksi</string>
+    <string name="typeFormatFile">File extension : pdf, doc, docx, rar (Max.10 MB)</string>
+    <string name="actionSendToVerifikator">Send to Verifikator</string>
+    <string name="actionRevisi">Revisi Keputusan</string>
+    <string name="actionVerifiedClosed">Verified dan Closed</string>
+    <string name="infoKomentar">Kosongkan bila tidak ingin menambahkan Komentar</string>
+    <string name="komentar">Komentar</string>
+    <string name="contentSendTo">Rencana Aksi tidak bisa diupdate setelah dikirim.</string>
+    <string name="contentSendToApproval">Rencana Aksi telah dikirim ke Approval</string>
+    <string name="contentSendToVerifikator">Rencana Aksi telah di Approved dan dikirim ke Verifikator.</string>
+    <string name="contentRevisi">Apakah anda yakin ingin merevisi Rencana Aksi ini?</string>
+    <string name="contentSuksesRevisi">Status Rencana Aksi telah diubah menjadi \"Revisi\"</string>
+    <string name="contentVerifiedAndClosed">Rencana Aksi telah di Verified dan Closed.</string>
+    <string name="updateKeputusan">Update Keputusan</string>
+    <string name="titleUpdateKeputusan">Update Keputusan</string>
+    <string name="namaAgenda">Nama Agenda</string>
+    <string name="pilihTanggalTarget">Pilih Tanggal Target</string>
+    <string name="update">Update</string>
+    <string name="statusMonitoring">Status Monitoring</string>
+    <string name="programId">Program ID</string>
+    <string name="titleTambahKeputusan">Tambah Keputusan</string>
+    <string name="tambah">Tambah</string>
+    <string name="noConnection">Please Check Your Connection!</string>
+    <string name="ErrorMessage_TglTarget">Tanggal target tidak boleh kosong!</string>
+
+
+    <string-array name="status_monitoring">
+        <item>- None -</item>
+        <item>Belum Dikerjakan</item>
+        <item>On Progress</item>
+        <item>Selesai</item>
+        <item>Approved</item>
+        <item>Verified</item>
+        <item>Backlog</item>
+    </string-array>
+
+    <string-array name="status_mon">
+        <item>-- Pilih Default --</item>
+        <item>Belum Dikerjakan</item>
+        <item>On Progress</item>
+        <item>Selesai</item>
+        <item>Approved</item>
+        <item>Verified</item>
+        <item>Revisi</item>
+    </string-array>
+</resources>

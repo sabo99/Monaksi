@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_detail_status"
+        android:title="@string/actionDetailStatus"/>
+
+    <item
+        android:id="@+id/action_update_task"
+        android:title="@string/actionUpdateRencanaAksi"/>
+
+    <item
+        android:id="@+id/action_send_to_approval"
+        android:title="@string/actionSendToApproval"/>
+
+    <item
+        android:id="@+id/action_send_to_verifikator"
+        android:title="@string/actionSendToVerifikator"/>
+
+    <item
+        android:id="@+id/action_verified_closed"
+        android:title="@string/actionVerifiedClosed"/>
+
+    <item
+        android:id="@+id/action_revisi"
+        android:title="@string/actionRevisi"/>
+
+</menu>

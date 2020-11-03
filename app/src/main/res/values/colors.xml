@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#14A2BA</color>
+    <color name="colorPrimaryDark">#125D72</color>
+    <color name="colorAccent">#00C0EF</color>
+    <color name="colorNavHeaderPrimary">#222D32</color>
+    <color name="colorNavHeaderPrimaryDark">#1A2226</color>
+    <color name="colorStatusUser">#3C763D</color>
+    <color name="colorBg">#F0F0F0</color>
+    <color name="colorBgWhite">#FFFFFF</color>
+    <color name="colorStatus0">#DD4B39</color>
+    <color name="colorStatus1">#D2D6DE</color>
+    <color name="colorStatus2">#F39C12</color>
+    <color name="colorStatus3">#14A2BA</color>
+    <color name="colorStatus4">#00C0EF</color>
+    <color name="colorStatus5">#39CCCC</color>
+    <color name="colorBorderLogin">#64B0F2</color>
+    <color name="colorBtnLogin">#1BB99A</color>
+    <color name="colorTextTitleLogin">#0D5B71</color>
+    <color name="colorTextLogoLogin">#03AEEF</color>
+
+    // Gradient in Login
+    <color name="colorStartGradient1">#14A2BA</color>
+    <color name="coloredGradient1">#125D72</color>
+    <color name="colorStartGradient2">#14A2BA</color>
+    <color name="coloredGradient2">#64B0F2</color>
+    <color name="colorStartGradient3">#39CCCC</color>
+
+    <color name="colorDismiss">#ECEFF1</color>
+    <color name="colorSubmit">#00ACC1</color>
+    <color name="colorRipple">#1A000000</color>
+    <color name="colorOverlayBlack">#66000000</color>
+</resources>
+
+    <!--
+       Opacity / Alpha
+
+       100% — FF
+       90% — E6
+       80% — CC
+       70% — B3
+       60% — 99
+       50% — 80
+       40% — 66
+       30% — 4D
+       20% — 33
+       10% — 1A
+       0% — 00
+    -->
