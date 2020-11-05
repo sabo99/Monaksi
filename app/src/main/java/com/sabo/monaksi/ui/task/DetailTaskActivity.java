@@ -427,6 +427,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                     String rencanaAksi = etRencanaAksi.getText().toString();
                     String extension = fileExtension;
 
+                    Log.d("extension", extension);
                     /** Update Lampiran  */
                     if (selectedFileUri != null && !rencanaAksi.equals("")) {
                         if (extension.equals("pdf") || extension.equals("rar") || extension.equals("doc") || extension.equals("docx")) {
@@ -434,28 +435,25 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                             /** Check File Size Max 10 MB*/
                             long fileSize = FileUtils.getFileSizeFromUri(this, selectedFileUri);
                             if (fileSize > Common.MAX_SIZE_UPLOAD) {
-
+                                tvFileLampiran.setBackground(getResources().getDrawable(R.drawable.border_choose_file_error));
                                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                                         .setTitleText("Oops!")
-                                        .setContentText("File saat ini : " + fileSize / (1024 * 1024) + " MB \nFile terlalu besar!")
+                                        .setContentText("File saat ini : " + fileSize / (1024 * 1024) + " MB \nFile anda terlalu besar!")
                                         .setConfirmText("Close")
-                                        .setConfirmClickListener(sweetAlertDialog1 -> {
-                                            selectedFileUri = null;
-                                            path = "";
-                                            btnChooseFile.setText("Choose File");
-                                            tvFileLampiran.setText("No file chosen.");
-                                        })
                                         .show();
                             } else {
                                 uploadFile_UpdateLampiran(sweetAlertDialog);
                                 updateRencanaAksi(rencanaAksi, sweetAlertDialog);
                             }
-                        } else
+                        } else {
+                            tvFileLampiran.setBackground(getResources().getDrawable(R.drawable.border_choose_file_error));
                             new SweetAlertDialog(DetailTaskActivity.this, SweetAlertDialog.WARNING_TYPE)
                                     .setTitleText("Oops!")
                                     .setContentText("File extension yang diperbolehkan hanya \n*(pdf, doc, docx, rar)")
                                     .setConfirmText("Close")
                                     .show();
+                        }
+
                     } else {
                         /** Update Rencana Aksi  */
                         updateRencanaAksi(rencanaAksi, sweetAlertDialog);
@@ -623,13 +621,16 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                 @Override
                 public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                     if (response.isSuccessful()) {
-                        sweetAlertDialog.dismissWithAnimation();
-                        sweetUploading.dismissWithAnimation();
 
-                        loadData();
-                        path = "";
-                        selectedFileUri = null;
-                        updateOnProgress();
+                        new Handler().postDelayed(() -> {
+                            sweetAlertDialog.dismissWithAnimation();
+                            sweetUploading.dismissWithAnimation();
+
+                            loadData();
+                            path = "";
+                            selectedFileUri = null;
+                            updateOnProgress();
+                        }, 1000);
 
 //                        sweetUploading
 //                                .setContentText("fileOld : " + fileOld + "\nfileNew : " + fileName)
@@ -674,6 +675,8 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
             selectedFileUri = data.getData();
 
             if (selectedFileUri != null) {
+                tvFileLampiran.setBackground(getResources().getDrawable(R.drawable.border_choose_file_success));
+
                 /** File Path */
                 path = FileUtils.getFilePathFromUri(this, selectedFileUri);
                 Log.d("path", path);

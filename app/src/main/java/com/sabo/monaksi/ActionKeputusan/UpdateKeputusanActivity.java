@@ -368,9 +368,12 @@ public class UpdateKeputusanActivity extends AppCompatActivity implements View.O
                 String status = String.valueOf(parent.getItemAtPosition(position));
                 if (!status.equals(Common.selectDefault)) {
                     tvStatusMonitoring.setText(status);
+                    tvStatusMonitoring.setTextColor(Common.colorStatusMonitoringUpdateKeputusan(UpdateKeputusanActivity.this, status));
                     resultStatusMonitoring = Common.formatStatusMonitoringToInt(status);
                 } else {
-                    tvStatusMonitoring.setText(Common.formatStatusMonitoringToString(monitoringModel.getLAST_STATUS()));
+                    String st = Common.formatStatusMonitoringToString(monitoringModel.getLAST_STATUS());
+                    tvStatusMonitoring.setText(st);
+                    tvStatusMonitoring.setTextColor(Common.colorStatusMonitoringUpdateKeputusan(UpdateKeputusanActivity.this, st));
                     resultStatusMonitoring = monitoringModel.getLAST_STATUS();
                 }
             }

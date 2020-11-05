@@ -633,4 +633,26 @@ public class Common {
         }
 
     }
+
+    /**
+     * Check Color Status for TextView in UpdateKeputusan
+     */
+    public static int colorStatusMonitoringUpdateKeputusan(Context context, String status) {
+        switch (status) {
+            case "Revisi":
+                return context.getResources().getColor(R.color.colorStatus0);
+            case "Belum Dikerjakan":
+                return context.getResources().getColor(android.R.color.black);
+            case "On Progress":
+                return context.getResources().getColor(R.color.colorStatus2);
+            case "Selesai":
+                return context.getResources().getColor(R.color.colorStatus3);
+            case "Approved":
+                return context.getResources().getColor(R.color.colorStatus4);
+            case "Verified":
+                return context.getResources().getColor(R.color.colorStatus5);
+            default:
+                return 0;
+        }
+    }
 }
