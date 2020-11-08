@@ -601,6 +601,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
      *
      * @param sweetAlertDialog
      */
+    boolean isFileUploaded = false;
     private void uploadFile_UpdateLampiran(SweetAlertDialog sweetAlertDialog) {
         if (!path.equals("") && !fileExtension.equals("")) {
             File file = new File(path);
@@ -621,17 +622,13 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                 @Override
                 public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                     if (response.isSuccessful()) {
+                        sweetAlertDialog.dismissWithAnimation();
+                        sweetUploading.dismissWithAnimation();
 
-                        new Handler().postDelayed(() -> {
-                            sweetAlertDialog.dismissWithAnimation();
-                            sweetUploading.dismissWithAnimation();
-
-                            loadData();
-                            path = "";
-                            selectedFileUri = null;
-                            updateOnProgress();
-                        }, 1000);
-
+                        path = "";
+                        selectedFileUri = null;
+                        updateOnProgress();
+                        isFileUploaded = true;
 //                        sweetUploading
 //                                .setContentText("fileOld : " + fileOld + "\nfileNew : " + fileName)
 //                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
@@ -648,6 +645,12 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                 }
             });
             btnChooseFile.setText("Choose File");
+            if (isFileUploaded) {
+                loadData();
+                cvDownload.setVisibility(View.VISIBLE);
+                isFileUploaded = false;
+            }
+
         }
 
     }

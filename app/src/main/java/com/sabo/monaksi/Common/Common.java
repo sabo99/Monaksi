@@ -627,7 +627,7 @@ public class Common {
         if (lampiran.equals("") || lampiran.equals("Tidak ada lampiran")) {
             tvLampiran.setText(context.getResources().getString(R.string.lampiranEmpty));
             cvDownload.setVisibility(View.GONE);
-        } else {
+        } else if (!lampiran.equals("Tidak ada lampiran")) {
             tvLampiran.setText(selectedMonitoring.getLAMPIRAN());
             cvDownload.setVisibility(View.VISIBLE);
         }

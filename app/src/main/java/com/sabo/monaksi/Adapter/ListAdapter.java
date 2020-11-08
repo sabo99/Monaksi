@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +18,6 @@ import com.sabo.monaksi.API.APIRequestData;
 import com.sabo.monaksi.ActionKeputusan.UpdateKeputusanActivity;
 import com.sabo.monaksi.Common.Common;
 import com.sabo.monaksi.Common.Preferences;
-import com.sabo.monaksi.EventBus.RefreshLoadData;
 import com.sabo.monaksi.EventBus.RefreshUpdated;
 import com.sabo.monaksi.Model.AgendaModel;
 import com.sabo.monaksi.Model.MonitoringModel;
@@ -37,9 +35,9 @@ import retrofit2.Response;
 
 public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-    private Context context;
-    private List<MonitoringModel> monitoringModelList;
-    private APIRequestData mService;
+    private final Context context;
+    private final List<MonitoringModel> monitoringModelList;
+    private final APIRequestData mService;
 
     public ListAdapter(Context context, List<MonitoringModel> monitoringModelList) {
         this.context = context;
@@ -143,10 +141,13 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
         sweetAlertDialog.setTitleText("Deleting...").changeAlertType(SweetAlertDialog.PROGRESS_TYPE);
 
         int ID_MON = Integer.parseInt(list.getID_MON());
-        mService.deleteKeputusan(ID_MON).enqueue(new Callback<ResponseModel>() {
+        String LAMPIRAN = list.getLAMPIRAN();
+
+        Log.d("LAMPIRAN", LAMPIRAN);
+        mService.deleteKeputusan(ID_MON, LAMPIRAN).enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     sweetAction.dismissWithAnimation();
                     sweetAlertDialog.setTitleText("Success!")
                             .setContentText(response.body().getMessage())
@@ -169,6 +170,10 @@ public class ListAdapter extends RecyclerView.Adapter<ViewHolder> {
             public void onFailure(Call<ResponseModel> call, Throwable t) {
                 sweetAction.dismissWithAnimation();
                 sweetAlertDialog.setTitleText("Oops!")
+                        .setConfirmText("Close")
+                        .setConfirmClickListener(sweetAlertDialog1 -> {
+                            sweetAlertDialog1.dismissWithAnimation();
+                        })
                         .setContentText(t.getMessage())
                         .changeAlertType(SweetAlertDialog.WARNING_TYPE);
             }

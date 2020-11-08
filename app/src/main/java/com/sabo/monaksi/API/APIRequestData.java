@@ -194,7 +194,8 @@ public interface APIRequestData {
 
     @FormUrlEncoded
     @POST("deleteKeputusan.php")
-    Call<ResponseModel> deleteKeputusan(@Field("ID_MON") int ID_MON);
+    Call<ResponseModel> deleteKeputusan(@Field("ID_MON") int ID_MON,
+                                        @Field("LAMPIRAN") String LAMPIRAN);
 
 
     /**
