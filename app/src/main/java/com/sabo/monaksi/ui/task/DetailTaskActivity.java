@@ -61,6 +61,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
     private Button btnDownload;
     private SpeedDialView speedDialView;
     private SweetAlertDialog sweetLoading;
+    private ProgressBar progressBar;
 
     private Uri selectedFileUri = null;
     private String path = "", fileExtension = "";
@@ -185,7 +186,6 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
         Common.checkDetails(this, monitoringModel, tvRencanaAksi, tvTglSelesai, tvTglApproved, tvTglClosed,
                 tvKeteranganKomentar, tvStatus, tvLampiran, cvDownload);
 
-
         speedDialView.addActionItem(
                 new SpeedDialActionItem.Builder(R.id.action_detail_status, R.drawable.ic_outline_info)
                         .setFabBackgroundColor(getResources().getColor(R.color.blue_btn_bg_color))
@@ -227,6 +227,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
         tvLampiran = findViewById(R.id.tvLampiran);
         btnDownload = findViewById(R.id.btnDownload);
         cvDownload = findViewById(R.id.cvDownload);
+        progressBar = findViewById(R.id.progressBar);
         speedDialView = findViewById(R.id.speedDialView);
 
         setSupportActionBar(toolbar);
@@ -601,7 +602,6 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
      *
      * @param sweetAlertDialog
      */
-    boolean isFileUploaded = false;
     private void uploadFile_UpdateLampiran(SweetAlertDialog sweetAlertDialog) {
         if (!path.equals("") && !fileExtension.equals("")) {
             File file = new File(path);
@@ -624,11 +624,8 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                     if (response.isSuccessful()) {
                         sweetAlertDialog.dismissWithAnimation();
                         sweetUploading.dismissWithAnimation();
-
                         path = "";
                         selectedFileUri = null;
-                        updateOnProgress();
-                        isFileUploaded = true;
 //                        sweetUploading
 //                                .setContentText("fileOld : " + fileOld + "\nfileNew : " + fileName)
 //                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
@@ -644,15 +641,16 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                     selectedFileUri = null;
                 }
             });
-            btnChooseFile.setText("Choose File");
-            if (isFileUploaded) {
+
+            progressBar.setVisibility(View.VISIBLE);
+
+            new Handler().postDelayed(() -> {
                 loadData();
-                cvDownload.setVisibility(View.VISIBLE);
-                isFileUploaded = false;
-            }
+                progressBar.setVisibility(View.INVISIBLE);
+            }, 5000);
 
-        }
-
+            btnChooseFile.setText("Choose File");
+        } // end if
     }
 
     private void checkPermissionUpload() {

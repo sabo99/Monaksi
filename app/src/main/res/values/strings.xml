@@ -68,7 +68,7 @@
     <string name="infoLampiran">*Click nama file untuk lihat lampiran \nAbaikan bila tidak ingin diganti. </string>
     <string name="noFileChosen">No file chosen.</string>
     <string name="blmAdaRencanaAksi">Belum ada rencana aksi</string>
-    <string name="typeFormatFile">File extension : pdf, doc, docx, rar (Max.10 MB)</string>
+    <string name="typeFormatFile">File extension : \npdf, doc, docx, rar (Max.5 MB)</string>
     <string name="actionSendToVerifikator">Send to Verifikator</string>
     <string name="actionRevisi">Revisi Keputusan</string>
     <string name="actionVerifiedClosed">Verified dan Closed</string>

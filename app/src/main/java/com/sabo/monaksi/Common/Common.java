@@ -61,7 +61,7 @@ public class Common {
     public static final int REQUEST_PERMISSION_UPLOAD = 100;
     public static final int REQUEST_PERMISSION_DOWNLOAD = 101;
     public static final int PICK_FILE_REQUEST = 10;
-    public static final int MAX_SIZE_UPLOAD = (1024 * 1024) * 10; // 10 MB
+    public static final int MAX_SIZE_UPLOAD = (1024 * 1024) * 5; // 5 MB
     /**
      * Color of Pie Chart
      */
@@ -624,11 +624,11 @@ public class Common {
 
         /** Lampiran */
         String lampiran = selectedMonitoring.getLAMPIRAN();
-        if (lampiran.equals("") || lampiran.equals("Tidak ada lampiran")) {
+        if (lampiran.equals("Tidak ada lampiran")) {
             tvLampiran.setText(context.getResources().getString(R.string.lampiranEmpty));
             cvDownload.setVisibility(View.GONE);
-        } else if (!lampiran.equals("Tidak ada lampiran")) {
-            tvLampiran.setText(selectedMonitoring.getLAMPIRAN());
+        } else {
+            tvLampiran.setText(lampiran);
             cvDownload.setVisibility(View.VISIBLE);
         }
 
