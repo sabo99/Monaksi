@@ -64,7 +64,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
     private ProgressBar progressBar;
 
     private Uri selectedFileUri = null;
-    private String path = "", fileExtension = "";
+    private String path = "", fileExtension = "", fileDownload ="";
     private TextView tvFileLampiran;
     private Button btnChooseFile;
 
@@ -185,6 +185,8 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
 
         Common.checkDetails(this, monitoringModel, tvRencanaAksi, tvTglSelesai, tvTglApproved, tvTglClosed,
                 tvKeteranganKomentar, tvStatus, tvLampiran, cvDownload);
+
+        fileDownload = monitoringModel.getLAMPIRAN();
 
         speedDialView.addActionItem(
                 new SpeedDialActionItem.Builder(R.id.action_detail_status, R.drawable.ic_outline_info)
@@ -385,7 +387,13 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void download() {
-        Uri uri = Uri.parse(new StringBuilder(Common.DOWNLOAD_URL).append(Common.selectedMonitoring.getLAMPIRAN()).toString());
+        String file = "";
+        if (selectedFileUri != null)
+            file = fileName;
+        else
+            file = fileDownload;
+
+        Uri uri = Uri.parse(new StringBuilder(Common.DOWNLOAD_URL).append(file).toString());
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
     }
@@ -602,11 +610,12 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
      *
      * @param sweetAlertDialog
      */
+    String fileName;
     private void uploadFile_UpdateLampiran(SweetAlertDialog sweetAlertDialog) {
         if (!path.equals("") && !fileExtension.equals("")) {
             File file = new File(path);
             String ID_MON = Common.selectedMonitoring.getID_MON(), PROG_ID = Common.selectedMonitoring.getPROG_ID();
-            String fileName = new StringBuilder("Monitoring_").append(ID_MON).append("_").append(PROG_ID).append(".").append(fileExtension).toString();
+            fileName = new StringBuilder("Monitoring_").append(ID_MON).append("_").append(PROG_ID).append(".").append(fileExtension).toString();
             String fileOld = Common.selectedMonitoring.getLAMPIRAN();
 
             RequestBody requestBody = RequestBody.create(MediaType.parse("*/*"), file);
@@ -624,8 +633,7 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
                     if (response.isSuccessful()) {
                         sweetAlertDialog.dismissWithAnimation();
                         sweetUploading.dismissWithAnimation();
-                        path = "";
-                        selectedFileUri = null;
+
 //                        sweetUploading
 //                                .setContentText("fileOld : " + fileOld + "\nfileNew : " + fileName)
 //                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
@@ -646,8 +654,13 @@ public class DetailTaskActivity extends AppCompatActivity implements View.OnClic
 
             new Handler().postDelayed(() -> {
                 loadData();
+
                 progressBar.setVisibility(View.INVISIBLE);
-            }, 5000);
+                cvDownload.setVisibility(View.VISIBLE);
+                tvLampiran.setText(fileName);
+
+                path = "";
+            }, 7000);
 
             btnChooseFile.setText("Choose File");
         } // end if

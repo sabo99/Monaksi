@@ -43,7 +43,6 @@ import retrofit2.Response;
 import static com.github.mikephil.charting.utils.ColorTemplate.rgb;
 
 public class Common {
-    public static final String DOWNLOAD_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/assets/";
     /**
      * Key SharedPreferences
      */
@@ -72,6 +71,7 @@ public class Common {
      * BASE URL HOSTING / LocalHost
      */
     private static final String BASE_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/";
+    public static final String DOWNLOAD_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/assets/";
     /**
      * Default Spinner Global
      */
