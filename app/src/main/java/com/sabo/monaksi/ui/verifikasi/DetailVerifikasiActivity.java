@@ -295,6 +295,26 @@ public class DetailVerifikasiActivity extends AppCompatActivity implements View.
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_komentar, null);
         EditText etKomentar = view.findViewById(R.id.etKomentar);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
+
+        progressBar.setVisibility(View.VISIBLE);
+        mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
+            @Override
+            public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
+                if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
+                    if (response.body().getKOMENTAR() == "Tidak ada komentar")
+                        etKomentar.setText("");
+                    else
+                        etKomentar.setText(response.body().getKOMENTAR());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MonitoringModel> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
         SweetAlertDialog sweetKomentar = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
                 .setTitleText("Tambah Komentar")
                 .showContentText(false)
@@ -305,7 +325,16 @@ public class DetailVerifikasiActivity extends AppCompatActivity implements View.
                 })
                 .setConfirmText("Submit")
                 .setConfirmClickListener(sweetAlertDialogMain -> {
-                    String komentar = etKomentar.getText().toString();
+                    //String komentar = etKomentar.getText().toString();
+                    String getKomen = etKomentar.getText().toString();
+                    String result = "";
+                    if (getKomen == "Tidak ada komentar")
+                        result = "Tidak ada komentar";
+                    else
+                        result = etKomentar.getText().toString();
+
+                    final String komentar = result;
+
                     if (verifiedAndClosed) {
                         new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
                                 .setCustomImage(R.drawable.ic_round_warning)
@@ -341,21 +370,24 @@ public class DetailVerifikasiActivity extends AppCompatActivity implements View.
                     }
                 });
         sweetKomentar.setOnShowListener(dialog -> {
-            progressBar.setVisibility(View.VISIBLE);
-            mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
-                @Override
-                public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
-                    if (response.isSuccessful()) {
-                        progressBar.setVisibility(View.GONE);
-                        etKomentar.setText(response.body().getKOMENTAR());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<MonitoringModel> call, Throwable t) {
-                    progressBar.setVisibility(View.GONE);
-                }
-            });
+//            progressBar.setVisibility(View.VISIBLE);
+//            mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
+//                @Override
+//                public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
+//                    if (response.isSuccessful()) {
+//                        progressBar.setVisibility(View.GONE);
+//                        if (response.body().getKOMENTAR() == "Tidak ada komentar")
+//                            etKomentar.setText("");
+//                        else
+//                            etKomentar.setText(response.body().getKOMENTAR());
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<MonitoringModel> call, Throwable t) {
+//                    progressBar.setVisibility(View.GONE);
+//                }
+//            });
         });
         sweetKomentar.show();
         LinearLayout linearLayout = sweetKomentar.findViewById(R.id.loading);

@@ -93,13 +93,14 @@
     <string name="ErrorMessage_TglTarget">Tanggal target tidak boleh kosong!</string>
 
 
-    <string-array name="status_monitoring">
+    <string-array name="status_monitoring_list">
         <item>- None -</item>
         <item>Belum Dikerjakan</item>
         <item>On Progress</item>
         <item>Selesai</item>
         <item>Approved</item>
         <item>Verified</item>
+        <item>Revisi</item>
         <item>Backlog</item>
     </string-array>
 

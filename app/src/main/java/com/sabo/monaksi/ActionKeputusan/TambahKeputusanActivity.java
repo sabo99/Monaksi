@@ -337,7 +337,7 @@ public class TambahKeputusanActivity extends AppCompatActivity implements View.O
         resultTglReport = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
         resultTglUpdates = "0000-00-00 00:00:00";
 
-        if (checkForm(true, resultTglTarget, tvTglTarget.getText().toString(), resultKeputusan)){
+        if (checkForm(true, resultTglTarget, tvTglTarget.getText().toString(), resultKeputusan)) {
             etKeputusan.setBackground(getResources().getDrawable(R.drawable.border_edit_text_success));
             SweetAlertDialog sweetTambah = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Tambah Keputusan!")

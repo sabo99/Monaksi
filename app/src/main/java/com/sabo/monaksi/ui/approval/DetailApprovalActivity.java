@@ -179,7 +179,7 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
                         .setFabSize(FloatingActionButton.SIZE_AUTO)
                         .setLabel(getResources().getString(R.string.actionDetailStatus)).create());
 
-        if (monitoringModel.getLAST_STATUS() == 3){
+        if (monitoringModel.getLAST_STATUS() == 3) {
             speedDialView.addActionItem(
                     new SpeedDialActionItem.Builder(R.id.action_send_to_verifikator, R.drawable.ic_round_send)
                             .setFabBackgroundColor(getResources().getColor(R.color.blue_btn_bg_color))
@@ -297,6 +297,26 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_komentar, null);
         EditText etKomentar = view.findViewById(R.id.etKomentar);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
+
+        progressBar.setVisibility(View.VISIBLE);
+        mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
+            @Override
+            public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
+                if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
+                    if (response.body().getKOMENTAR() == "Tidak ada komentar")
+                        etKomentar.setText("");
+                    else
+                        etKomentar.setText(response.body().getKOMENTAR());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MonitoringModel> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
         SweetAlertDialog sweetKomentar = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE)
                 .setTitleText("Tambah Komentar")
                 .showContentText(false)
@@ -307,7 +327,14 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
                 })
                 .setConfirmText("Submit")
                 .setConfirmClickListener(sweetAlertDialogMain -> {
-                    String komentar = etKomentar.getText().toString();
+                    String getKomen = etKomentar.getText().toString();
+                    String result = "";
+                    if (getKomen == "Tidak ada komentar")
+                        result = "Tidak ada komentar";
+                    else
+                        result = etKomentar.getText().toString();
+
+                    final String komentar = result;
                     /** Send To Verifikator */
                     if (sendToVerifikator) {
                         new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
@@ -344,21 +371,25 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
                     }
                 });
         sweetKomentar.setOnShowListener(dialog -> {
-            progressBar.setVisibility(View.VISIBLE);
-            mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
-                @Override
-                public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
-                    if (response.isSuccessful()) {
-                        progressBar.setVisibility(View.GONE);
-                        etKomentar.setText(response.body().getKOMENTAR());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<MonitoringModel> call, Throwable t) {
-                    progressBar.setVisibility(View.GONE);
-                }
-            });
+//            progressBar.setVisibility(View.VISIBLE);
+//            mService.getMonByID(Common.selectedMonitoring.getID_MON()).enqueue(new Callback<MonitoringModel>() {
+//                @Override
+//                public void onResponse(Call<MonitoringModel> call, Response<MonitoringModel> response) {
+//                    if (response.isSuccessful()) {
+//                        progressBar.setVisibility(View.GONE);
+//                        if (response.body().getKOMENTAR() == "Tidak ada komentar")
+//                            etKomentar.setText("");
+//                        else
+//                            etKomentar.setText(response.body().getKOMENTAR());
+//
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<MonitoringModel> call, Throwable t) {
+//                    progressBar.setVisibility(View.GONE);
+//                }
+//            });
         });
         sweetKomentar.show();
         LinearLayout linearLayout = sweetKomentar.findViewById(R.id.loading);
@@ -371,7 +402,9 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
 
     }
 
-    /** Revisi Keputusan */
+    /**
+     * Revisi Keputusan
+     */
     private void revisiKeputusan(String komentar, SweetAlertDialog sweetAlertDialogMain, SweetAlertDialog sweetAlertDialog) {
         String ID_MON = Common.selectedMonitoring.getID_MON();
         int LAST_STATUS = 0;  /** Revised*/
@@ -386,7 +419,7 @@ public class DetailApprovalActivity extends AppCompatActivity implements View.On
         mService.updateStatusMonitoring(ID_MON, LAST_STATUS, komentar).enqueue(new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     sweetAlertDialog.setTitleText("Success!")
                             .showCancelButton(false)
                             .setContentText(getString(R.string.contentSuksesRevisi))

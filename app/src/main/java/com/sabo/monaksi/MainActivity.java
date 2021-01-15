@@ -1,6 +1,7 @@
 package com.sabo.monaksi;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -210,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         /** Spinner Status Monitoring Event */
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.status_monitoring, R.layout.spinner_transparent);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.status_monitoring_list, R.layout.spinner_transparent);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spStatusMonitoring.setAdapter(adapter);
         spStatusMonitoring.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -416,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             sweetSelectRapat.show();
                             LinearLayout linearLayout = sweetSelectRapat.findViewById(R.id.loading);
                             int index = linearLayout.indexOfChild(linearLayout.findViewById(R.id.content_text));
-                            linearLayout.setPadding(0, 0, 0, 30);
+                            linearLayout.setPadding(0, 0, 0, 50);
                             linearLayout.addView(view, index + 1);
 
                             sweetLoading.dismissWithAnimation();

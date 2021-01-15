@@ -72,6 +72,10 @@ public class Common {
      */
     private static final String BASE_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/";
     public static final String DOWNLOAD_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/assets/";
+
+//    private static final String BASE_URL = "http://192.168.1.3/Android/Monaksi/";
+//    public static final String DOWNLOAD_URL = "http://192.168.1.3/Android/Monaksi/assets/";
+
     /**
      * Default Spinner Global
      */
@@ -547,6 +551,9 @@ public class Common {
                 tvStatusMonitoring.setTextColor(context.getResources().getColor(R.color.colorStatus5));
             }
             break;
+            case "Revisi" :{
+                tvStatusMonitoring.setTextColor(context.getResources().getColor(R.color.colorStatus0));
+            }
             default:
                 break;
         }
