@@ -36,7 +36,7 @@ PHP Web Service
     
 Database SQL
 
-    https://github.com/sabo99/Monaksi/blob/master/id14821560_db_monaksiv001.sql
+    https://github.com/sabo99/Monaksi/blob/master/db_android_monaksi.sql
     
     
 Change API BASE URL
