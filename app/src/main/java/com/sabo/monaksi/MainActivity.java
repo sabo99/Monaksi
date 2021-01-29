@@ -1,7 +1,6 @@
 package com.sabo.monaksi;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -416,7 +416,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             });
                             sweetSelectRapat.show();
                             LinearLayout linearLayout = sweetSelectRapat.findViewById(R.id.loading);
+                            Button confirm = sweetSelectRapat.findViewById(R.id.confirm_button);
                             int index = linearLayout.indexOfChild(linearLayout.findViewById(R.id.content_text));
+                            confirm.setBackground(getResources().getDrawable(R.drawable.button_background_custom));
                             linearLayout.setPadding(0, 0, 0, 50);
                             linearLayout.addView(view, index + 1);
 

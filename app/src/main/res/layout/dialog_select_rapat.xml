@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-            app:cardBackgroundColor="@color/blue_btn_bg_color"
+            app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="6dp">
 
             <Spinner

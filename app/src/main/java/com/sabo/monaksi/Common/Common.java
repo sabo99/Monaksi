@@ -70,11 +70,14 @@ public class Common {
     /**
      * BASE URL HOSTING / LocalHost
      */
-    private static final String BASE_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/";
-    public static final String DOWNLOAD_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/assets/";
+//    private static final String BASE_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/";
+//    public static final String DOWNLOAD_URL = "https://monaksi-v001.000webhostapp.com/android/monaksi/assets/";
 
-//    private static final String BASE_URL = "http://192.168.1.3/Android/Monaksi/";
-//    public static final String DOWNLOAD_URL = "http://192.168.1.3/Android/Monaksi/assets/";
+//    private static final String BASE_URL = "http://192.168.42.206/Android/Monaksi/";
+//    public static final String DOWNLOAD_URL = "http://192.168.42.206/Android/Monaksi/assets/";
+
+    private static final String BASE_URL = "http://192.168.1.4/Android/Monaksi/";
+    public static final String DOWNLOAD_URL = "http://192.168.1.4/Android/Monaksi/assets/";
 
     /**
      * Default Spinner Global

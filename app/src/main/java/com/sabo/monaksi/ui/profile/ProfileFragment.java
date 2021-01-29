@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         mService = Common.getAPI();
         initViews(root);
 
-        profileViewModel.getMutableLiveData().observe(this, userModel -> {
+        profileViewModel.getMutableLiveData().observe(getViewLifecycleOwner(), userModel -> {
             if (userModel != null){
                 tvNama.setText(userModel.getNama());
                 tvUsername.setText(userModel.getUsername());
@@ -149,6 +149,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     }
                 });
         sweetEditProfile.setOnShowListener(dialog -> {
+            etNamaUser.requestFocus();
             etNamaUser.setText(Preferences.getNama(getContext()));
             etUsername.setText(Preferences.getUsername(getContext()));
             etEmail.setText(Preferences.getEmail(getContext()));
@@ -273,6 +274,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 });
         sweetGantiPassword.setOnShowListener(dialog -> {
             etNamaUser.setText(Preferences.getNama(getContext()));
+            etPassword.requestFocus();
         });
         sweetGantiPassword.show();
         LinearLayout linearLayout = sweetGantiPassword.findViewById(R.id.loading);
