@@ -1,4 +1,4 @@
-# Monaksi
+# Monaksi Android
 Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sumatera Bagian Selatan (Magang)
 
 Gradle Use : 
