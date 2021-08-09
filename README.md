@@ -19,19 +19,11 @@ Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sum
         sourceCompatibility JavaVersion.VERSION_1_8
     }
 
-### PHP Web Service
-
-    https://github.com/sabo99/Monaksi/blob/master/PHP%20Monaksi.rar
-
-
-### Database SQL
-    https://github.com/sabo99/Monaksi/blob/master/db_android_monaksi.sql 
-
-
 ### Change API BASE URL
     https://github.com/sabo99/Monaksi/blob/master/app/src/main/java/com/sabo/monaksi/Common/Common.java
 
-
+### Database SQL & PHP Web Service
+    https://github.com/sabo99/Monaksi/tree/master/PHP_%26_Database
 
 ## Design UI App MONAKSI
 
