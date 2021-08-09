@@ -1,6 +1,8 @@
 # Monaksi Android
 Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sumatera Bagian Selatan (Magang)
 
+## Java - Android
+
 ### Gradle Used :
 
     implementation 'com.squareup.picasso:picasso:2.71828'
