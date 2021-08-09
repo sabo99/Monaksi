@@ -20,7 +20,7 @@ public class FileUtils {
 
     public static String getFilePathFromUri(Context context, Uri selectedFileUri) {
         String fileName = getFileName(selectedFileUri);
-        File dir = new File(Environment.getExternalStorageDirectory() + "");
+        File dir = context.getExternalFilesDir(selectedFileUri.toString());
         if (!dir.exists())
             dir.mkdirs();
         if (!TextUtils.isEmpty(fileName)) {
