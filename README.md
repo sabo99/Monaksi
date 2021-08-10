@@ -22,7 +22,7 @@ Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sum
     }
 
 ### Change API BASE URL
-    https://github.com/sabo99/Monaksi/blob/master/app/src/main/java/com/sabo/monaksi/Common/Common.java
+    app/src/main/java/com/sabo/monaksi/Common/Common.java
 
 ### Database SQL & PHP Web Service
     https://github.com/sabo99/Monaksi/tree/master/PHP_%26_Database
@@ -30,83 +30,83 @@ Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sum
 ## Design UI App MONAKSI
 
 ### Log In
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Login.png" width="300" height="600"/>
+<img src="ScreenShot_App/Login.png" width="300" height="600"/>
 
 ### Menu Drawer
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Menu.png" width="300" height="600"/>
+<img src="ScreenShot_App/Menu.png" width="300" height="600"/>
 
 ### Dashboard
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dashboard.jpeg" width="300" height="600"/><img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Awal.png" width="300" height="600"/>
+<img src="ScreenShot_App/Dashboard.jpeg" width="300" height="600"/><img src="ScreenShot_App/Awal.png" width="300" height="600"/>
 
 ### List Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/List.png" width="300" height="600"/>
+<img src="ScreenShot_App/List.png" width="300" height="600"/>
 
 ### Tambah Keputusan / Rencana Aksi
 #### _Only Admin & Operator_
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Tambah%20Keputusan.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/Tambah%20Keputusan.jpg" width="600" height="600"/>
 
 ### Update Keputusan / Rencana Aksi
 #### _Only Admin & Operator_
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Update%20Keputusan.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/Update%20Keputusan.jpg" width="600" height="600"/>
 
 #
 
 ### List - Detail Keputusan / Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/List%20Detail.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/List%20Detail.jpg" width="600" height="600"/>
 
 #
 
 ### Task Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Task.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Task.jpeg" width="300" height="600"/>
 
 #
 
 ### Task - Detail Keputusan / Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Task%20Detail.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/Task%20Detail.jpg" width="600" height="600"/>
 
 #
 
 ### Task - Dialog Update Keputusan / Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dialog%20Update%20Rencana%20Aksi.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Dialog%20Update%20Rencana%20Aksi.jpeg" width="300" height="600"/>
 
 #
 
 ### Task - Dialog Tambah Komentar
 #### Send to Approval
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dialog%20Tambah%20Komen.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Dialog%20Tambah%20Komen.jpeg" width="300" height="600"/>
 
 #
 
 ### Approval Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Approval.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Approval.jpeg" width="300" height="600"/>
 
 #
 
 ### Approval - Detail Keputusan / Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Approval%20Detail.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/Approval%20Detail.jpg" width="600" height="600"/>
 
 #
 
 ### Approval - Dialog Tambah Komentar
 #### Send to Verifikator | Revisi Keputusan
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dialog%20Tambah%20Komen.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Dialog%20Tambah%20Komen.jpeg" width="300" height="600"/>
 
 #
 
 ### Verifikator Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Verifikasi.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Verifikasi.jpeg" width="300" height="600"/>
 
 #
 
 ### Verifikator - Detail Keputusan / Rencana Aksi
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Verifikasi%20Detail.jpg" width="600" height="600"/>
+<img src="ScreenShot_App/Verifikasi%20Detail.jpg" width="600" height="600"/>
 
 #
 
 ### Profile
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Profile.png" width="300" height="600"/>
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dialog%20Edit%20Profile.jpeg" width="300" height="600"/>
-<img src="https://github.com/sabo99/Monaksi/blob/master/ScreenShot_App/Dialog%20Ganti%20Password.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Profile.png" width="300" height="600"/>
+<img src="ScreenShot_App/Dialog%20Edit%20Profile.jpeg" width="300" height="600"/>
+<img src="ScreenShot_App/Dialog%20Ganti%20Password.jpeg" width="300" height="600"/>
 
 
 
