@@ -4,28 +4,40 @@ Aplikasi Clonning Monitoring Rencana Aksi PLN UIKSBS - PLN Unit Pembangkitan Sum
 ## Java - Android
 
 ### Gradle Used :
+```groovy
+implementation 'com.squareup.picasso:picasso:2.71828'
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+implementation 'de.hdodenhof:circleimageview:3.1.0'
+implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'
+implementation 'org.greenrobot:eventbus:3.2.0'
+implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+implementation 'com.github.Ferfalk:SimpleSearchView:0.1.5'
+implementation "com.leinardi.android:speed-dial:3.1.1"
+```
 
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'
-    implementation 'org.greenrobot:eventbus:3.2.0'
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    implementation 'com.github.Ferfalk:SimpleSearchView:0.1.5'
-    implementation "com.leinardi.android:speed-dial:3.1.1"
+
 
 ### Source Compatibility
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
+```groovy
+compileOptions {
+    targetCompatibility JavaVersion.VERSION_1_8
+    sourceCompatibility JavaVersion.VERSION_1_8
+}
+```
+   
 
 ### Change API BASE URL
-    app/src/main/java/com/sabo/monaksi/Common/Common.java
+Open file <a href="app/src/main/java/com/sabo/monaksi/Common/Common.java">`Common.java`</a>
+```java
+public class Common {
+    private static final String BASE_URL = "http://192.168.1.8/Android/Monaksi/";
+    public static final String DOWNLOAD_URL = "http://192.168.1.8/Android/Monaksi/assets/";
+}
+```
 
 ### Database SQL & PHP Web Service
-    https://github.com/sabo99/Monaksi/tree/master/PHP_%26_Database
+Open file <a href="PHP_n_Database">`PHP & Database`</a>
 
 ## Design UI App MONAKSI
 
